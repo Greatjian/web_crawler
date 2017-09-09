@@ -51,7 +51,7 @@ body = "TEXT YOU WANT TO SEND"
 msg.attach(MIMEText(body, 'plain'))
  
 filename = "report.pdf"
-attachment = open("/Users/huashuli/downloads/report.pdf", "rb")
+attachment = open("/Users/shujianwen/downloads/report.pdf", "rb")
  
 part = MIMEBase('application', 'octet-stream')
 part.set_payload((attachment).read())
@@ -62,7 +62,7 @@ msg.attach(part)
  
 server = smtplib.SMTP('smtp.gmail.com', 587)
 server.starttls()
-server.login(fromaddr, "biciinfo31415926")
+server.login(fromaddr, "passwordhere")
 text = msg.as_string()
 server.sendmail(fromaddr, toaddr, text)
 server.quit()
